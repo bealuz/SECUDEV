@@ -1,0 +1,103 @@
+.first	
+{
+	background-image: url(img/bg.jpg);
+	background-size:cover;
+}
+
+.second	
+{
+	background-image: url(img/green.jpg);
+	background-size:cover;
+}
+
+.third
+{
+	background-image: url(img/lightGreen.jpg);
+	background-size:cover;
+}
+
+.helpImage {
+	height:80%;
+	width: 80%;
+}
+
+img.defaultImage {
+	opacity:1.0;
+	height: 80%;
+	width: 80%;
+}
+
+.greenWell {
+	background-color: #eafaea;
+}
+
+.textShadow {
+	text-shadow: 1px 1px #000000;
+}
+
+.normalText {
+	font-size: 20px;
+}
+
+.mediumText {
+	font-size: 28px;
+}
+
+.century {
+	font-family: "Century Gothic";
+}
+
+.whiteMediumText {
+	font-size: 28px;
+	color: #ffffff;
+}
+
+.greenMediumText {
+	font-size: 28px;
+	color: #0f3d0f;
+}
+
+.greenText {
+	font-size: 28px;
+	color: #0f3d0f;
+}
+
+.bigText {
+	font-size: 40px;
+}
+
+.whiteText {
+	font-size: 22px;
+	color: #ffffff;
+}
+
+.whiteBigText {
+	font-size: 40px;
+	color: #ffffff;
+}
+
+.greenBigText {
+	font-size: 44px;
+	color: #0f3d0f;
+}
+
+.zPositive {
+z-index: 100;
+	}
+
+.whitewell {
+    background-color: rgba(255, 255, 255, .5);
+    border-radius: 8px;
+}
+
+.margin {
+    margin: 8px;
+
+}
+	
+@media screen and (max-width: 1258px) {  
+    th,td
+    {
+		font-size: 80%;
+    }
+}

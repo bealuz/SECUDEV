@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AcEs Web Application</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link rel="icon" href="img/favicon.png" type="image" sizes="16x16">
+    <link href="css/custombootstrap.css" rel="stylesheet" media="screen">
+    <link href="css/shadow.css" rel="stylesheet" media="screen">
+    <link href="css/custom.css" rel="stylesheet" media="screen">
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/custom.js"></script>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top zPositive">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">AcEs</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li><a href="#theProfessor">The Professor</a></li>
+                <li><a href="#theStudent">The Student</a></li>
+                <li><a href="#contactUs">About Us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="container-fluid first">
+        <br><br><br><br><br>
+        <div class="row">
+            <div class="col-md-5 col-md-offset-2 whitewell" id="mainValueProp">
+                <div class="margin">
+                    <span class="greenBigText textShadow"><strong>Ac</strong>ademic <strong>Es</strong>timator</span>
+                    <span class="greenText">
+                        <br><br>
+                        is the <strong>next generation</strong> web application for <strong>professors</strong> and <strong>students </strong>alike.
+                    </span>
+                    <br><br>
+                    <form method="link" action="#theProfessor">
+                        <input id="learnMore" type="submit" class="btn btn-primary col-md-4 normalText" name="button" value="Learn more">
+                    </form>
+                    <br><br><br>
+                    <strong>
+                        &copy <span class="normalText">2014, Greeting101. All Rights Reserved.</span>
+                    </strong>
+                </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1 well" id="loginform">
+                <form role="form" action = "validate.php" method="post">
+                    <div class="form-group">
+                        <div align="center"><img class="defaultImage" src="acesLogo.jpg" /></div>
+                        <br />
+                        <label for="IDLogin">IDNumber</label>
+                        <input type="text" class="form-control" id="username" name="username" placeholder="ID Number">
+                    </div>
+                    <div class="form-group">
+                        <label for="PasswordLogin">Password</label>
+                        <input type="password" class="form-control" id="PasswordLogin" name="password" placeholder="Password">
+                    </div>
+                    <div class="row">
+                        <button type="submit" id="login" class="btn btn-default col-md-10 col-md-offset-1">Login</button><br>
+                    </div>
+                </form>
+                <hr>
+                <h3 class="text-center">
+                    <strong>No Account?</strong><br />
+                </h3>
+                <div class="row">
+                    <button type="button" id="show" class="btn btn-primary col-md-10 col-md-offset-1">Sign Up Now!</button>
+                </div>
+            </div>
+            <div class="col-md-3 col-md-offset-1 well" id="studentform">
+                <form role="form" id="register" action="register.php" method="post">
+                    <div class="form-group">
+                        <div align="center"><img class="defaultImage" src="acesLogo.jpg" /></div>
+                        <br />
+                        <label for="firstname">First name</label>
+                        <input type="text" class="form-control" id="firstname" placeholder="First name" name="firstname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="middlename">Middle name</label>
+                        <input type="text" class="form-control" id="middlename" placeholder="Middle name" name="middlename" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="lastname">Last name</label>
+                        <input type="text" class="form-control" id="lastname" placeholder="Last name" name="lastname" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="IDNumber">ID Number</label>
+                        <input type="text" class="form-control" id="IDNumber" placeholder="ID number" name="idno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Email address</label>
+                        <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword2">Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword2" placeholder="Password" name="regpass" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="exampleInputPassword3">Confirm Password</label>
+                        <input type="password" class="form-control" id="exampleInputPassword3" placeholder="Confirm Password" name="regpass2" required>
+                    </div>
+                    <div class="row">
+                        <input type="submit" id="teacher" class="btn btn-primary col-md-5 col-md-offset-1" name="button" value="I am a teacher">
+
+                        <input type="submit" id="student" class="btn btn-primary col-md-5" name="button" value="I am a student">
+                    </div>
+                    <hr />
+                    <div class="row">
+                        <button type="button" id="hide" action="#" class="btn btn-default col-md-10 col-md-offset-1">Already have an account? Login!</button>
+                    </div><br />
+                </form>
+            </div>
+
+
+        </div>
+        <br><br>
+    </div>
+    </div>
+    <hr>
+    <div class="container-fluid second" id="theProfessor">
+        <br><br><br>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1	">
+                <span class="whiteBigText century">The Professor</span><br><br>
+                <span class="whiteMediumText century"><i><strong>Connect</strong> to your students!</i></span>
+                <span class="whiteText century">
+                    <br><br>
+                    <ul type="circle">
+                        <li><strong>Assess</strong> - have assessments of your students' classroom performance.</li>
+                        <br>
+                        <br>
+                        <br>
+                        <li><strong>Evaluate</strong> - give personal evaluations of your students, and share them to other teachers as well.</li>
+                        <br>
+                        <br>
+                        <br>
+                        <li><strong>Adapt</strong> - ultimately, you will have an easier way of adapting to your students' learning styles.</li>
+                        <br>
+                        <br>
+                        <br>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid third" id="theStudent">
+        <br><br><br>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <span class="greenBigText century">The Student</span><br><br>
+                <span class="greenMediumText century"><i><strong>Share</strong> your grades for <strong>learning upgrades!</strong></i></span>
+                <span class="greenText century">
+                    <br><br>
+                    <ul>
+                        <li><strong>Share</strong> - give your personal information, including grades. Help your professors give you a better learning experience!</li>
+                        <br>
+                        <br>
+                        <br>
+                        <li><strong>Update</strong> - update your information as needed.</li>
+                        <br>
+                        <br>
+                        <br>
+                    </ul>
+                </span>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div class="container-fluid second" id="contactUs">
+        <br><br><br>
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <span class="whiteBigText century">About Us</span><br>
+                <span class="whiteText century">
+                    <br>Developers:<br><br>
+                    <ul type="square">
+                        <li>Luz, Ma. Beatrice L.</li>
+                        <br>
+                        <br>
+                        <li>Nocum, McAnjelo D.</li>
+                        <br>
+                        <br>
+                        <li>Purganan, Timothy Jasper T.</li>
+                        <br>
+                        <br>
+                        <li>Wong, Wing San T.</li>
+                        <br>
+                    </ul>
+                    <form method="link" action="http://webappss19.tumblr.com/">
+                        <input id="learnMore" type="submit" class="btn btn-default col-md-4 normalText" name="button" value="Visit our blog!">
+                    </form>
+                </span>
+                <br><br><br><br>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
