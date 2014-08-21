@@ -1,9 +1,37 @@
 <?php
+	
+	$firstname = $_POST['firstname'];
+	$middlename = $_POST['middlename'];
+	$lastname = $_POST['lastname'];
+	$name = ($firstname . " " . $middlename . " " . $lastname);
+	$role = "student";
+	$username = $_POST['idno'];
+	$password = $_POST['regpass'];
+	$email = $_POST['email'];
+	
+	$con = mysqli_connect('localhost', 'root', '', 'aces');
+	mysqli_query($con, "insert into users(username,password,role) 
+					values('" . $username . "',
+							'" . $password . "',
+							'" . $role . "');");
+	
+	mysqli_query($con, "insert into students(username,name,email) 
+					values('" . $username . "',
+							'" . $name . "',
+							'" . $email . "');");
+	
 	session_start();
+	
+	$_SESSION['username'] = $username;
+	$_SESSION['role'] = $role;
+	/*
 	if(!isset($_SESSION['username']) && (!isset($_SESSION['role']) && $_SESSION['role'] != 'student')) {
 		header('Location: http://localhost/academicestimator/default.html');
 		exit;
 	}
+	*/
+	
+	mysqli_close($con);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,7 +56,7 @@
                 <a class="navbar-brand" href="#">AcEs</a>
 
             </div>
-            <p class="navbar-text navbar-right">Hi @name! <a href="/../academicestimator/logout" class="navbar-link"><span class="glyphicon glyphicon-log-out"></span></a></p>
+            <p class="navbar-text navbar-right">Hi <?php echo ($firstname . ' ' . $middlename  . ' ' . $lastname)  ?> <a href="/../academicestimator/logout" class="navbar-link"><span class="glyphicon glyphicon-log-out"></span></a></p>
         </div>
     </div>
 
@@ -36,10 +64,10 @@
         <div class="row">
             <div class="col-md-6 col-md-offset-3 well">
                 <h3>Before anything else, Please tell us more about your Personal Information</h3>
-                <form method="post" enctype="multipart/form-data">
+                <form action="studentinfo.php" method="post">
                     <div class="form-group">
                         <label for="Picture">Upload Profile Picture</label>
-                        <input type="file" id="Picture" name="uploadfile" required>
+                        <input type="file" id="Picture" name="uploadfile">
                     </div>
                     <div class="form-group">
                         <label for="Nickname">Nickname</label>
@@ -75,8 +103,6 @@
                     <div class="form-group">
                         <button type="submit" class="btn btn-primary">Save</button>
                     </div>
-
-
                 </form>
             </div>
 

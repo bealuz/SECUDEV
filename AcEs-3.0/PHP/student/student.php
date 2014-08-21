@@ -52,62 +52,62 @@
 					<?php
 					
 					$con = mysqli_connect('localhost', 'root', '', 'aces');
-					$result = mysqli_query($con, "select * from students WHERE Username='" . $_SESSION['username'] . "'");
+					$result = mysqli_query($con, "select * from students WHERE username='" . $_SESSION['username'] . "'");
 					$row = mysqli_fetch_array($result);
 					
 					echo '
 						<div class="row">
-							<div class="col-md-6 col-md-offset-1"><strong><h2>' . $row['Name'] . '<br>' . $_SESSION['username'] . '<br />' . $row['Nickname'] . '</h2></strong><br></div>
+							<div class="col-md-6 col-md-offset-1"><strong><h2>' . $row['name'] . '<br>' . $_SESSION['username'] . '<br />' . $row['nickname'] . '</h2></strong><br></div>
 							<div class="col-md-2 col-md-offset-2"><img border="0" src="/../academicestimator/img/student/user_icon.png" alt="userpicture" width="100" height="100"></div>
 						</div>';
 						
 					echo '
                     <div class="row">
                         <div class=" col-md-3 col-md-offset-1"><label>College: </label></div>
-                        <div class="col-m-6 col-md-offset-1">' . $row['College'] . '<br></div>
+                        <div class="col-m-6 col-md-offset-1">' . $row['college'] . '<br></div>
                     </div>';
 					
 					echo '
                     <div class="row">
                         <div class=" col-md-3 col-md-offset-1"><label>Course: </label></div>
-                        <div class="col-m-6 col-md-offset-1">' . $row['Course'] . '<br></div>
+                        <div class="col-m-6 col-md-offset-1">' . $row['course'] . '<br></div>
                     </div>';
 					
 					echo '
                     <div class="row">
                         <div class=" col-md-3 col-md-offset-1"><label>Mobile Number: </label></div>
-                        <div class="col-m-6 col-md-offset-1">' . $row['MobileNo'] . '<br></div>
+                        <div class="col-m-6 col-md-offset-1">' . $row['mobileNo'] . '<br></div>
                     </div>';
 					
 					echo '
                     <div class="row">
                         <div class=" col-md-3 col-md-offset-1"><label>Email Address: </label></div>
-                        <div class="col-m-6 col-md-offset-1">' . $row['Email'] . '<br></div>
+                        <div class="col-m-6 col-md-offset-1">' . $row['email'] . '<br></div>
                     </div>';
 					
 					echo '
                     <div class="row">
                         <div class=" col-md-3 col-md-offset-1"><label>High School </label></div>
-                        <div class="col-m-6 col-md-offset-1">' . $row['HighSchool'] . '<br></div>
+                        <div class="col-m-6 col-md-offset-1">' . $row['highSchool'] . '<br></div>
                     </div>';
 					
 					echo '
                     <div class="row">
                         <div class=" col-md-3 col-md-offset-1"><label>CGPA: </label></div>
-                        <div class="col-m-6 col-md-offset-1">' . $row['CGPA'] . '<br></div>
+                        <div class="col-m-6 col-md-offset-1">' . $row['cgpa'] . '<br></div>
                     </div>';
 					
 					echo '
                     <div class="row">
                         <div class=" col-md-3 col-md-offset-1"><label>Learning Style: </label></div>
-                        <div class="col-m-6 col-md-offset-1">' . $row['LearningStyle'] . '<br></div>
+                        <div class="col-m-6 col-md-offset-1">' . $row['learningStyle'] . '<br></div>
                     </div>';
 
 					echo '<hr />';
 
                     echo '<h2>Grades</h2><br>';
 					
-					$result = mysqli_query($con, "select * from grades WHERE Username='" . $_SESSION['username'] . "'");
+					$result = mysqli_query($con, "select * from grades WHERE username='" . $_SESSION['username'] . "'");
 					$row = mysqli_fetch_array($result);
 					
 					echo '
@@ -122,10 +122,10 @@
                         </thead>
                         <tbody>
                                     <tr>
-                                        <td>' . $row['CourseCode'] . '</td>
+                                        <td>' . $row['courseCode'] . '</td>
                                         <td>' . $row['AY'] . '</td>
-                                        <td>' . $row['Term'] . '</td>
-                                        <td>' . $row['Grade'] . '</td>
+                                        <td>' . $row['term'] . '</td>
+                                        <td>' . $row['grade'] . '</td>
                                     </tr>
                         </tbody>
                     </table>';
