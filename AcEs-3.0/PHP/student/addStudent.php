@@ -32,6 +32,7 @@
 	*/
 	
 	mysqli_close($con);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
