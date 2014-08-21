@@ -1,5 +1,5 @@
 <?php
-	
+	include 'encrypt_decrypt.php';
 	$firstname = $_POST['firstname'];
 	$middlename = $_POST['middlename'];
 	$lastname = $_POST['lastname'];
@@ -10,15 +10,16 @@
 	$email = $_POST['email'];
 	
 	$con = mysqli_connect('localhost', 'root', '', 'aces');
+    $key = 'SELECT encryption_key FROM key';
 	mysqli_query($con, "insert into users(username,password,role) 
-					values('" . $username . "',
-							'" . $password . "',
-							'" . $role . "');");
+					values('" . encrypt($username, $key) . "',
+							'" . crypt($password) . "',
+							'" . encrypt($role, $key) . "');");
 	
 	mysqli_query($con, "insert into students(username,name,email) 
-					values('" . $username . "',
-							'" . $name . "',
-							'" . $email . "');");
+					values('" . encrypt($username, $key) . "',
+							'" . encrypt($name, $key) . "',
+							'" . encrypt($email, $key) . "');");
 	
 	session_start();
 	

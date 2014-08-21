@@ -1,4 +1,5 @@
 <?php
+	include 'encrypt_decrypt.php';
 	session_start();
 	
 	$username = $_SESSION['username'];
@@ -11,17 +12,17 @@
 	$cgpa = $_POST['CGPA'];
 	
 	$con = mysqli_connect('localhost', 'root', '', 'aces');
-	
+	$key = 'SELECT encryption_key FROM key';
 	mysqli_query($con, "update students 
-						set nickname='" . $nickname . "',
-							college='" . $college. "',
-							course='" . $course. "',
-							mobileNo='" . $mobileNo . "',
-							highSchool='" . $highSchool . "',
-							cgpa='" . $cgpa . "',
-							learningStyle='" . $learningStyle . "',
-							address='" . $address . "' 
-						where username='" . $username . "';");
+						set nickname='" . encrypt($nickname, $key) . "',
+							college='" . encrypt($college, $key). "',
+							course='" . encrypt($course, $key). "',
+							mobileNo='" . $encrypt($mobileNo, $key) . "',
+							highSchool='" . encrypt($highSchool, $key) . "',
+							cgpa='" . encrypt($cgpa, $key) . "',
+							learningStyle='" . null . "',
+							address='" . encrypt($address, $key) . "' 
+						where username='" . encrypt($username, $key) . "';");
 	
 	header('Location: student.php');
 	exit;
