@@ -1,8 +1,10 @@
 <?php
 	session_start();
-	if(!isset($_SESSION['username']) && (!isset($_SESSION['role']) && $_SESSION['role'] != 'student')) {
+	if(!isset($_SESSION['username'])) {
+		if($_SESSION['role'] == 'student') {
 		header('Location: http://localhost/academicestimator/default.html');
 		exit;
+		}
 	}
 ?>
 
@@ -33,10 +35,10 @@
                     <li class=dropdown>
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">Edit Profile <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/Student/Edit/Info">Basic Information</a></li>
-                            <li><a href="/Student/Edit/Password">Change Password</a></li>
-                            <li><a href="/Student/Edit/Learning">Learning Style</a></li>
-                            <li><a href="/Student/Edit/Grades">Grades</a></li>
+                            <li><a href="/../academicestimator/student/studentBasicInfo.php">Basic Information</a></li>
+                            <li><a href="/../academicestimator/student/studentPassword.php">Change Password</a></li>
+                            <li><a href="/../academicestimator/student/studentLearning.php">Learning Style</a></li>
+                            <li><a href="/../academicestimator/student/studentGrades.php">Grades</a></li>
                         </ul>
                     </li>
                 </ul>
