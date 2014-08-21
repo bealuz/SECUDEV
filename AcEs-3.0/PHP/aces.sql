@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 19, 2014 at 08:20 AM
+-- Generation Time: Aug 22, 2014 at 01:44 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -19,6 +19,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `aces`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `courses`
+--
+
+CREATE TABLE IF NOT EXISTS `courses` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `username` varchar(128) NOT NULL,
+  `courseCode` varchar(7) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -43,8 +56,14 @@ CREATE TABLE IF NOT EXISTS `grades` (
 
 CREATE TABLE IF NOT EXISTS `professors` (
   `username` varchar(128) NOT NULL,
-  `courseCode` varchar(7) NOT NULL,
-  PRIMARY KEY (`username`)
+  `idnumber` int(8) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `mname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
+  `email` varchar(128) NOT NULL,
+  `password` varchar(128) NOT NULL,
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `idnumber` (`idnumber`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -55,7 +74,10 @@ CREATE TABLE IF NOT EXISTS `professors` (
 
 CREATE TABLE IF NOT EXISTS `students` (
   `username` varchar(128) NOT NULL,
-  `name` varchar(128) NOT NULL,
+  `idnumber` int(8) NOT NULL,
+  `fname` varchar(50) NOT NULL,
+  `mname` varchar(50) NOT NULL,
+  `lname` varchar(50) NOT NULL,
   `nickname` varchar(32) NOT NULL,
   `college` varchar(3) NOT NULL,
   `course` varchar(16) NOT NULL,
@@ -64,7 +86,8 @@ CREATE TABLE IF NOT EXISTS `students` (
   `cgpa` float NOT NULL,
   `learningStyle` varchar(32) NOT NULL,
   `email` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`username`)
+  PRIMARY KEY (`username`),
+  UNIQUE KEY `idnumber` (`idnumber`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
