@@ -15,6 +15,7 @@
 		if(strcmp($row['Role'], "Student") == 0) {
 			session_start();
 			$_SESSION['username'] = $username;
+			$_SESSION['role'] = 'student';
 			header('Location: http://localhost/academicestimator/student/student.php/');
 			exit;
 		}
@@ -22,7 +23,9 @@
 			if(strcmp($row['Role'], "Professor") == 0) {
 				session_start();
 				$_SESSION['username'] = $username;
-				echo "HA";
+				$_SESSION['role'] = 'professor';
+				header('Location: http://localhost/academicestimator/prof/prof.php/');
+				exit;
 			}
 	}
 	else {
