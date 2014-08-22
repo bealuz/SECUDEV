@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2014 at 03:24 AM
+-- Generation Time: Aug 22, 2014 at 06:48 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -66,6 +66,24 @@ CREATE TABLE IF NOT EXISTS `grades` (
   `grade` float NOT NULL,
   PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `key`
+--
+
+CREATE TABLE IF NOT EXISTS `key` (
+  `encryption_key` varchar(30) NOT NULL,
+  PRIMARY KEY (`encryption_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `key`
+--
+
+INSERT INTO `key` (`encryption_key`) VALUES
+('!@*())(*&^%$#@!');
 
 -- --------------------------------------------------------
 
