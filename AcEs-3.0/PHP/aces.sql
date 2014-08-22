@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2014 at 01:44 AM
+-- Generation Time: Aug 22, 2014 at 02:05 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -56,14 +56,12 @@ CREATE TABLE IF NOT EXISTS `grades` (
 
 CREATE TABLE IF NOT EXISTS `professors` (
   `username` varchar(128) NOT NULL,
-  `idnumber` int(8) NOT NULL,
   `fname` varchar(50) NOT NULL,
   `mname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
   `email` varchar(128) NOT NULL,
   `password` varchar(128) NOT NULL,
-  PRIMARY KEY (`username`),
-  UNIQUE KEY `idnumber` (`idnumber`)
+  PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -74,7 +72,6 @@ CREATE TABLE IF NOT EXISTS `professors` (
 
 CREATE TABLE IF NOT EXISTS `students` (
   `username` varchar(128) NOT NULL,
-  `idnumber` int(8) NOT NULL,
   `fname` varchar(50) NOT NULL,
   `mname` varchar(50) NOT NULL,
   `lname` varchar(50) NOT NULL,
@@ -86,8 +83,7 @@ CREATE TABLE IF NOT EXISTS `students` (
   `cgpa` float NOT NULL,
   `learningStyle` varchar(32) NOT NULL,
   `email` varchar(128) DEFAULT NULL,
-  PRIMARY KEY (`username`),
-  UNIQUE KEY `idnumber` (`idnumber`)
+  PRIMARY KEY (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
