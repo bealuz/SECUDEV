@@ -1,4 +1,6 @@
 <?php
+
+	include 'encrypt_decrypt.php';
 	
 	function connecToDatabase(){
 		$host = "localhost";
@@ -11,17 +13,34 @@
 		mysql_select_db("$database") or die(mysql_error());
 	}
 	
+	function retrieveKey(){
+	
+		connectToDatabase();
+		
+		$sql = 'SELECT encryption_key FROM key';
+		$result = mysql_query("$sql") or die(mysql_error());
+		
+		$row = mysql_fetch_array($result);
+		$key = $row['encryption_key'];
+		
+		mysql_close();
+		die();
+		return $key;
+	}
+	
 	function registerProfessor(){	
 	
 		connecToDatabase();
 
-		$firstName = $_POST['firstname'];
-		$middleName = $_POST['middlename'];
-		$lastName = $_POST['lastname'];
-		$username = $_POST['idno'];
-		$email = $_POST['email'];
-		$password = $_POST['regpass'];
-		$role = "professor";
+		$key = retrieveKey();
+		
+		$firstName = encrypt($_POST['firstname'], $key);
+		$middleName = encrypt($_POST['middlename'], $key);
+		$lastName = encrypt($_POST['lastname'], $key);
+		$username = encrypt($_POST['idno'], $key);
+		$email = encrypt($_POST['email'], $key);
+		$password = $_POST['regpass'], $key);
+		$role = encrypt("professor", $key);
 		
 		$hashed = crypt($password);
 	
