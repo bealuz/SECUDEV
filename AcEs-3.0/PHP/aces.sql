@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2014 at 02:05 AM
+-- Generation Time: Aug 22, 2014 at 03:05 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -30,6 +30,11 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `username` varchar(128) NOT NULL,
   `courseCode` varchar(7) NOT NULL,
+  `section` varchar(10) NOT NULL,
+  `days` varchar(5) NOT NULL,
+  `timeFrom` time NOT NULL,
+  `timeTo` time NOT NULL,
+  `room` varchar(10) NOT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
