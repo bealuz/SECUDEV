@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 22, 2014 at 03:05 AM
+-- Generation Time: Aug 22, 2014 at 03:24 AM
 -- Server version: 5.6.16
 -- PHP Version: 5.5.9
 
@@ -19,6 +19,20 @@ SET time_zone = "+00:00";
 --
 -- Database: `aces`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `comments`
+--
+
+CREATE TABLE IF NOT EXISTS `comments` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `professor_username` varchar(128) NOT NULL,
+  `student_username` varchar(128) NOT NULL,
+  `comment` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
